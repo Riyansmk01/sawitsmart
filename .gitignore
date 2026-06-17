@@ -1,0 +1,66 @@
+# CodeIgniter 4 .gitignore
+
+# Environment & secrets
+.env
+*.env.local
+*.env.*.local
+
+# CI4 Core & Composer packages (install via: composer install)
+vendor/
+system/
+
+
+# Writable directories (logs, cache, session, uploads)
+writable/cache/*
+writable/debugbar/*
+writable/logs/*
+writable/session/*
+writable/tmp/*
+writable/uploads/*
+!writable/cache/.gitkeep
+!writable/debugbar/.gitkeep
+!writable/logs/.gitkeep
+!writable/session/.gitkeep
+!writable/tmp/.gitkeep
+!writable/uploads/.gitkeep
+
+# Public writable (session files)
+public/writable/
+
+
+# Composer vendor (install via composer install)
+vendor/
+
+# Node modules
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE / Editor
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+.phpstorm.meta.php
+_ide_helper.php
+_ide_helper_models.php
+
+# PHPUnit
+.phpunit.result.cache
+build/
+
+# Temp / Backup
+*.bak
+*.swp
+*.tmp
+*~
+
+# Public uploads (optional — comment out jika ingin track)
+public/uploads/*
+!public/uploads/.gitkeep
