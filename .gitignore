@@ -1,14 +1,18 @@
-# CodeIgniter 4 .gitignore
+# CodeIgniter 4 .gitignore — Vercel Deploy
 
-# Environment & secrets
+# Environment & secrets (JANGAN commit .env!)
 .env
 *.env.local
 *.env.*.local
 
-# CI4 Core & Composer packages (install via: composer install)
-vendor/
-system/
+# ── VERCEL DEPLOY NOTE ──────────────────────────────────────────────────────
+# vendor/ dan system/ HARUS di-push ke GitHub agar Vercel bisa menjalankan CI4
+# (Vercel tidak menjalankan 'composer install' saat build)
+# Jika tidak deploy ke Vercel, bisa uncomment baris vendor/ dan system/ di bawah
+# ────────────────────────────────────────────────────────────────────────────
 
+# vendor/   <- AKTIFKAN jika tidak pakai Vercel
+# system/   <- AKTIFKAN jika tidak pakai Vercel
 
 # Writable directories (logs, cache, session, uploads)
 writable/cache/*
@@ -24,12 +28,8 @@ writable/uploads/*
 !writable/tmp/.gitkeep
 !writable/uploads/.gitkeep
 
-# Public writable (session files)
+# Public writable (session files lokal)
 public/writable/
-
-
-# Composer vendor (install via composer install)
-vendor/
 
 # Node modules
 node_modules/
@@ -61,6 +61,6 @@ build/
 *.tmp
 *~
 
-# Public uploads (optional — comment out jika ingin track)
+# Public uploads
 public/uploads/*
 !public/uploads/.gitkeep
